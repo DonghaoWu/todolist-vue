@@ -2,15 +2,24 @@
   <div>
     <div id="app"></div>
     <my-todo-list v-bind:todos="todos"></my-todo-list>
+    <create-todo v-on:add-todo="addTodo"></create-todo>
   </div>
 </template>
 
 <script>
 import MyTodoList from './components/MyTodoList.vue';
+import CreateTodo from './components/CreateTodo.vue';
+
 export default {
   name: 'App',
   components: {
     MyTodoList,
+    CreateTodo,
+  },
+  methods: {
+    addTodo(content) {
+      this.todos.push(content);
+    },
   },
 
   data() {

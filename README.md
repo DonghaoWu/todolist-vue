@@ -98,4 +98,12 @@ import Hello from './components/Hello';
 
 - v-model to control the data state.
 
+9. deleting a todo
+
+- bind a function in parent component and invoke it in the child component.
+
+- pass a function from parent to child
+
+10. add a new todo
+
 - 
