@@ -25,13 +25,17 @@
         </div>
         <div class="ui two button attached buttons">
           <button class="ui basic blue button" v-on:click="hideForm">
-            X
+            Submit
           </button>
         </div>
       </div>
     </div>
 
-    <div class="ui bottom attached green basic button" v-show="todo.done">
+    <div
+      class="ui bottom attached green basic button"
+      v-show="todo.done"
+      v-on:click="completeTodo(todo)"
+    >
       Completed
     </div>
     <div
@@ -39,7 +43,7 @@
       v-show="!todo.done"
       v-on:click="completeTodo(todo)"
     >
-      Completed
+      Pending
     </div>
   </div>
 </template>

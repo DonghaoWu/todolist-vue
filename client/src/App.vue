@@ -16,40 +16,23 @@ export default {
     MyTodoList,
     CreateTodo,
   },
+  mounted() {
+    this.fetchData();
+  },
   methods: {
     addTodo(content) {
       this.todos.push(content);
+    },
+    async fetchData() {
+      const res = await fetch('data.json');
+      const data = await res.json('data.json');
+      this.todos = data;
     },
   },
 
   data() {
     return {
-      todos: [
-        {
-          id: '001',
-          title: 'Todo A',
-          project: 'Project A',
-          done: false,
-        },
-        {
-          id: '002',
-          title: 'Todo B',
-          project: 'Project B',
-          done: true,
-        },
-        {
-          id: '003',
-          title: 'Todo C',
-          project: 'Project C',
-          done: false,
-        },
-        {
-          id: '004',
-          title: 'Todo D',
-          project: 'Project D',
-          done: false,
-        },
-      ],
+      todos: [],
     };
   },
 };

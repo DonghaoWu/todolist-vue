@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="title">
     <p>Completed Tasks:{{ todos.filter(todo => todo.done === true).length }}</p>
     <p>
       Completed Tasks:{{ todos.filter(todo => todo.done === false).length }}
@@ -29,10 +29,17 @@ export default {
     },
     completeTodo(todo) {
       const todoIndex = this.todos.indexOf(todo);
-      this.todos[todoIndex].done = true;
+      this.todos[todoIndex].done = !this.todos[todoIndex].done;
     },
   },
 };
 </script>
 
-<style></style>
+<style>
+.title {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+</style>
