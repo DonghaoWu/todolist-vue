@@ -20,12 +20,12 @@ export default {
     this.fetchData();
   },
   methods: {
-    addTodo(content) {
-      this.todos.push(content);
+    addTodo(newTodo) {
+      this.todos.push(newTodo);
     },
     async fetchData() {
       const res = await fetch('data.json');
-      const data = await res.json('data.json');
+      const data = await res.json();
       this.todos = data;
     },
   },

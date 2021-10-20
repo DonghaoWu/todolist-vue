@@ -25,7 +25,7 @@
         </div>
         <div class="ui two button attached buttons">
           <button class="ui basic blue button" v-on:click="hideForm">
-            Submit
+            Save
           </button>
         </div>
       </div>
