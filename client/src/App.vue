@@ -16,6 +16,11 @@ export default {
     MyTodoList,
     CreateTodo,
   },
+  data() {
+    return {
+      todos: [],
+    };
+  },
   mounted() {
     this.fetchData();
   },
@@ -28,12 +33,6 @@ export default {
       const data = await res.json();
       this.todos = data;
     },
-  },
-
-  data() {
-    return {
-      todos: [],
-    };
   },
 };
 </script>
